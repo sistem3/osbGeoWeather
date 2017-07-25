@@ -1,0 +1,55 @@
+@import '../theme/colours';
+
+app-weather-forecast {
+  .forecast-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+  }
+
+  .forecast-list li {
+    text-transform: capitalize;
+    background-color: rgba($color-black, 0.5);
+    padding: 10px;
+    border-bottom: 1px solid $color-black;
+    border-right: 1px solid $color-black;
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    h3 {
+      margin-top: 0;
+      padding-left: 0;
+    }
+  }
+
+  .weather-loader {
+    width: 120px;
+    min-height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    z-index: 2;
+
+    i {
+      color: $color-white;
+      font-size: 50px;
+    }
+  }
+
+  .today-weather {
+    .temp {
+      font-size: 50px;
+    }
+
+    .condition {
+      position: relative;
+      top: -7px;
+    }
+
+    img {
+      margin-top: -20px;
+    }
+  }
+}

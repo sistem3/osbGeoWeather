@@ -1,0 +1,39 @@
+<main>
+  <section class="osb-geo-weather-holder container">
+    <nav class="container">
+      <h1>Local Weather <i class="fa fa-refresh" (click)="refreshData()"></i></h1>
+    </nav>
+    <article class="weather forecast-data" *ngIf="!isLoading">
+      <h3 class="today-weather">
+        <span class="title"><span class="temp">{{ weatherData.current.temp_c }}<sup>&deg;</sup></span>
+        <img [src]="weatherData.current.condition.icon" title="{{ weatherData.current.condition.text}}" />
+        <span class="condition">{{ weatherData.current.condition.text}}</span></span>
+      </h3>
+      <!--<h4 class="today-high-low">
+          <i class="fa fa-chevron-up"></i> High: <span>{{ weatherData.main.temp_max }}</span><sup>&deg;</sup> |
+          <i class="fa fa-chevron-down"></i> Low: <span>{{ weatherData.main.temp_min }}</span><sup>&deg;</sup>
+      </h4>-->
+      <p>Location <i class="fa fa-map-marker"></i>: <span>{{ weatherData.location.name }}</span></p>
+      <!--<p class="today-sunrise-sunset">
+          <i class="wi wi-sunrise"></i> Sunrise: <span>{{ weatherData.sys.sunrise * 1000 | date:'hh:mm' }}</span> |
+          <i class="wi wi-sunset"></i> Sunset: <span>{{ weatherData.sys.sunset * 1000 | date:'hh:mm' }}</span>
+      </p>-->
+    </article>
+    <article class="weather container-fluid" *ngIf="!forecastLoading">
+      <h3 (click)="forecastShowing = !forecastShowing"><i class="fa fa-calendar"></i> Weather Forecast <i class="fa" [ngClass]="{'fa-chevron-up': forecastShowing, 'fa-chevron-down': !forecastShowing}"></i></h3>
+      <ul class="forecast-list row" *ngIf="forecastShowing">
+        <li *ngFor="let forecast of forecastData.forecast.forecastday" class="col-md-3">
+          <h3>{{ forecast.date | date: 'EEE dd MMM' }}</h3>
+          <h4>{{ forecast.day.condition.text }} <img [src]="forecast.day.condition.icon" title="{{ weatherData.current.condition.text}}" /></h4>
+          <p><i class="fa fa-chevron-up"></i> High: {{ forecast.day.maxtemp_c }}<sup>&deg;</sup></p>
+          <p><i class="fa fa-chevron-down"></i> Low: {{ forecast.day.mintemp_c }}<sup>&deg;</sup></p>
+        </li>
+      </ul>
+    </article>
+  </section>
+  <section class="weather-loader" *ngIf="isLoading">
+    <i class="fa fa-spinner fa-spin"></i>
+    <p class="message"></p>
+  </section>
+  <section class="background defaultBg"></section>
+</main>

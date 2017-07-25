@@ -1,0 +1,27 @@
+app-weather-forecast {
+  .osb-geo-weather-holder {
+    position: relative;
+    box-sizing: border-box;
+    min-height: 90px;
+    padding-bottom: 10px;
+  }
+
+  h2, h3 {
+    padding-left: 10px;
+  }
+
+  h3 {
+    margin-top: 10px;
+  }
+
+  .weather {
+    position: relative;
+    z-index: 2;
+
+    &.forecast-data {
+      h3, h4, p {
+        padding-left: 10px;
+      }
+    }
+  }
+}

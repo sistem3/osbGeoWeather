@@ -2,7 +2,8 @@ CACHE MANIFEST
 # 2017-07-25:v0.0.1
 
 # Explicitly cached entries
-index.html
+../index.html
+https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
 
 # All other resources (e.g. sites) require the user to be online.
 NETWORK:
@@ -10,5 +11,5 @@ NETWORK:
 
 # Additional resources to cache
 CACHE:
-index.html
+../index.html
 https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css

@@ -4,7 +4,6 @@ import { WeatherForecastService } from './weather-forecast.service';
 @Component({
   selector: 'app-weather-forecast',
   templateUrl: './weather-forecast.component.html',
-  styleUrls: ['./weather-forecast.component.scss'],
   providers: [ WeatherForecastService ]
 })
 export class WeatherForecastComponent implements OnInit {

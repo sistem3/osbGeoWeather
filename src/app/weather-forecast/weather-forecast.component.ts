@@ -17,6 +17,7 @@ export class WeatherForecastComponent implements OnInit {
   forecastData: any;
   positionData: any;
   positionString: string;
+  lastUpdated: Date;
 
   constructor(private weatherForecastService: WeatherForecastService) { }
 
@@ -32,6 +33,7 @@ export class WeatherForecastComponent implements OnInit {
   setForecast(forecast) {
     this.forecastData = forecast;
     this.forecastLoading = false;
+    this.lastUpdated = new Date();
   }
 
   refreshData() {

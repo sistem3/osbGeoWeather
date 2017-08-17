@@ -1,6 +1,6 @@
 <main>
   <section class="osb-geo-weather-holder container">
-    <nav class="container">
+    <nav>
       <h1>Local Weather <i class="fa fa-refresh" (click)="refreshData()"></i></h1>
     </nav>
     <article class="weather forecast-data" *ngIf="!isLoading">
@@ -13,13 +13,13 @@
           <i class="fa fa-chevron-up"></i> High: <span>{{ weatherData.main.temp_max }}</span><sup>&deg;</sup> |
           <i class="fa fa-chevron-down"></i> Low: <span>{{ weatherData.main.temp_min }}</span><sup>&deg;</sup>
       </h4>-->
-      <p>Location <i class="fa fa-map-marker"></i>: <span>{{ weatherData.location.name }}</span></p>
+      <p>Location <i class="fa fa-map-marker"></i>: <span>{{ weatherData.location.name }}</span> | Last Updated: {{ lastUpdated | date: 'medium'}}</p>
       <!--<p class="today-sunrise-sunset">
           <i class="wi wi-sunrise"></i> Sunrise: <span>{{ weatherData.sys.sunrise * 1000 | date:'hh:mm' }}</span> |
           <i class="wi wi-sunset"></i> Sunset: <span>{{ weatherData.sys.sunset * 1000 | date:'hh:mm' }}</span>
       </p>-->
     </article>
-    <article class="weather container-fluid" *ngIf="!forecastLoading">
+    <article class="weather" *ngIf="!forecastLoading">
       <h3 (click)="forecastShowing = !forecastShowing"><i class="fa fa-calendar"></i> Weather Forecast <i class="fa" [ngClass]="{'fa-chevron-up': forecastShowing, 'fa-chevron-down': !forecastShowing}"></i></h3>
       <ul class="forecast-list row" *ngIf="forecastShowing">
         <li *ngFor="let forecast of forecastData.forecast.forecastday" class="col-md-3">

@@ -6,10 +6,10 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class WeatherForecastService {
-  googleMapsApiBase = '';
-  googleMapsApiKey  = '';
-  weatherApiBase = '';
-  weatherApiKey = '';
+  googleMapsApiBase: string;
+  googleMapsApiKey: string;
+  weatherApiBase: string;
+  weatherApiKey: string;
 
   constructor(private http: Http) {
     this.googleMapsApiBase = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';

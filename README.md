@@ -1,6 +1,17 @@
-# OsbGeoWeather
+# osbGeoWeather
+
+## Description: 
+[Angular JS](https://angular.io/) Application for displaying local weather based on geolocation. The geolocation is done through Google Maps API and the weather forecast currently comes from [Apixu API](https://www.apixu.com/).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0-beta.0.
+
+## Version: 0.0.1
+## Demo: [Click Here](https://osbgeoweather.firebaseapp.com/)
+
+## Dependencies:
+* [Angular 4](https://angular.io/)
+* [Bootstrap 4](http://getbootstrap.com)
+* [Font Awesome](http://fontawesome.io)
 
 ## Development server
 

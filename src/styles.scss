@@ -6,3 +6,8 @@
 @import 'app/weather-forecast/weather-forecast.component';
 
 @import '../node_modules/bootstrap/scss/bootstrap';
+
+
+body {
+  background-color: $cerulean;
+}
